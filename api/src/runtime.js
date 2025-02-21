@@ -1,7 +1,6 @@
 const logger = require('logplease').create('runtime');
 const semver = require('semver');
 const config = require('./config');
-const globals = require('./globals');
 const fss = require('fs');
 const path = require('path');
 
@@ -125,13 +124,6 @@ class Runtime {
             limit_overrides,
         } = info;
         version = semver.parse(version);
-
-        if (build_platform !== globals.platform) {
-            logger.warn(
-                `Package ${language}-${version} was built for platform ${build_platform}, ` +
-                    `but our platform is ${globals.platform}`
-            );
-        }
 
         if (provides) {
             // Multiple languages in 1 package

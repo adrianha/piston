@@ -13,7 +13,7 @@ const job_states = {
 };
 
 const MAX_BOX_ID = 999;
-const ISOLATE_PATH = '/usr/local/bin/isolate';
+const ISOLATE_PATH = './isolate';
 let box_id = 0;
 
 let remaining_job_spaces = config.max_concurrent_jobs;
